@@ -56,7 +56,7 @@ app.get('/comments/new', (req, res) => {
 // **********************************
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment, id: uuid() })
+    comments.push({ username, comment, id: uuid() }) //untuk menambahkan hasil baru dari req.body yang dikirimkan didalam POST
     res.redirect('/comments');
 })
 // *******************************************
@@ -64,8 +64,8 @@ app.post('/comments', (req, res) => {
 // *******************************************
 app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
-    const comment = comments.find(c => c.id === id);
-    res.render('comments/show', { comment })
+    const comment = comments.find(c => c.id === id); // menggunakan array method dengan c adalah perwakilan tiap elemen array dengan sub object id --> yang memiliki id sama dengan query string params
+    res.render('comments/show', { comment }) // kemudian element array yang sesuai dengan id params tersebut akan masuk didlam halaman render show dan siap dipanggil dalam ejs
 })
 // *******************************************
 // EDIT - renders a form to edit a comment
