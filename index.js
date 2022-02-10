@@ -42,7 +42,8 @@ let comments = [
 // INDEX - renders multiple comments
 // **********************************
 app.get('/comments', (req, res) => {
-    res.render('comments/index', { comments });
+    res.render('comments/index', { comments }); // sudah otomatis mengambil di folder views dengan path tersebut
+    // { comments } diberikan agar ketika merender index.ejs bisa mengambil fungsi  diatas {comments} atau {comments : comments} agar bisa diambil propertinya
 })
 // **********************************
 // NEW - renders a form
