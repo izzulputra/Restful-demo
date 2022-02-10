@@ -80,11 +80,11 @@ app.get('/comments/:id/edit', (req, res) => {
 // *******************************************
 app.patch('/comments/:id', (req, res) => {
     const { id } = req.params;
-    const foundComment = comments.find(c => c.id === id);
+    const foundComment = comments.find(c => c.id === id); // menemukan id berdasarkan query string
 
     //get new text from req.body
     const newCommentText = req.body.comment;
-    //update the comment with the data from req.body:
+    //update the comment with the data from req.body, which transfered from new update comment
     foundComment.comment = newCommentText;
     //redirect back to index (or wherever you want)
     res.redirect('/comments')
