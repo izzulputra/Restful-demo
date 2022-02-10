@@ -46,13 +46,13 @@ app.get('/comments', (req, res) => {
     // { comments } diberikan agar ketika merender index.ejs bisa mengambil fungsi  diatas {comments} atau {comments : comments} agar bisa diambil propertinya
 })
 // **********************************
-// NEW - renders a form
+// NEW - renders a form (untuk meminta menampilkan halaman form)
 // **********************************
 app.get('/comments/new', (req, res) => {
     res.render('comments/new');
 })
 // **********************************
-// CREATE - creates a new comment
+// CREATE - creates a new comment (membuat halaman form)
 // **********************************
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
