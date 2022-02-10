@@ -56,7 +56,7 @@ app.get('/comments/new', (req, res) => {
 // **********************************
 app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment, id: uuid() }) //untuk menambahkan hasil baru dari req.body yang dikirimkan didalam POST
+    comments.push({ username, comment, id: uuid() }) //untuk menambahkan hasil baru dari req.body yang dikirimkan didalam POST, UUID digunakan untuk generate new ID yang akan dimasukkan ke dalam fake database
     res.redirect('/comments');
 })
 // *******************************************
